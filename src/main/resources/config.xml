@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <import resource="/service1/config1.xml"/>
+    <import resource="/service2/config2.xml"/>
+    <import resource="/service3/config3.xml"/>
+
+    <bean id="hellomessage" class="com.HelloMessage" name="ms,hellms,msg">
+        <property name="message" value="Hello from Spring World"/>
+    </bean>
+
+    <bean id="address" class="com.address.Address" name="ads add">
+        <property name="city" value="Banglore"/>
+        <property name="country" value="India"/>
+        <property name="zipcode" value="530068"/>
+    </bean>
+
+    <bean id="person" class="com.person.Person" name="ps,p">
+        <property name="name" value="GIRISH"/>
+        <property name="lastName" value="SHAKYA"/>
+        <property name="age" value="38"/>
+    </bean>
+
+    <bean id="designation" class="com.designation.Designation">
+        <property name="emp_id" value="123"/>
+        <property name="salary" value="125000"/>
+        <property name="department" value="IT"/>
+        <property name="email" value="clairvoyant.1947@gmail.com"/>
+    </bean>
+
+</beans>

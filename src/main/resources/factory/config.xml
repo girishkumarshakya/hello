@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="tutorial.factory.method.ClientService" id="clientService"
+          factory-method="createInstance"/>
+
+    <bean class="tutorial.factory.method.kotlin.ClientService" id="clientService1"
+          factory-method="createInstance"/>
+
+    <!-- the factory bean, which contains a method called createInstance() -->
+    <bean id="serviceLocator"
+          class="tutorial.factory.method.DefaultServiceLocator">
+    </bean>
+    <!-- the bean to be created via the factory bean -->
+    <bean id="cs"
+          factory-method="createClientServiceInstance"
+          factory-bean="serviceLocator"/>
+
+</beans>

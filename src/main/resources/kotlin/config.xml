@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="person" class="tutorial.ref.kotlin.person.Person">
+        <property name="name" value="lastName"/>
+        <property name="lastName" value="Shakya"/>
+        <property name="age" value="28"/>
+    </bean>
+    <bean id="address" class="tutorial.ref.kotlin.address.Address">
+        <property name="city" value="BANGALURU"/>
+        <property name="country" value="INDIA"/>
+        <property name="zipcode" value="530068"/>
+    </bean>
+    <bean id="employee" class="tutorial.ref.kotlin.employee.Employee">
+        <property name="emp_id" value="1234"/>
+        <property name="salary" value="150000"/>
+        <property name="person" ref="person"/>
+        <property name="address" ref="address"/>
+    </bean>
+    <alias name="employee" alias="emp"/>
+</beans>
